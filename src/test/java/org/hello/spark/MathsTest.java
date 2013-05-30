@@ -26,4 +26,16 @@ public class MathsTest {
         assertTrue(Maths.isCube(8), "8 is a cube");
         assertFalse(Maths.isCube(9), "9 isn't a cube");
     }
+
+    public void testIsEven() {
+        for (int i = 0; i < 100; i += 2) {
+            assertTrue(Maths.isEven(i));
+        }
+    }
+
+    public void testIsOdd() {
+        for (int i = 1; i < 100; i += 2) {
+            assertTrue(Maths.isOdd(i));
+        }
+    }
 }

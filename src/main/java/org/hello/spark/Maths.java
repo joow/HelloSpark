@@ -15,7 +15,13 @@ public final class Maths {
     }
 
     public static boolean isPrime(int x) {
-        for (int divider = 2; divider < x; divider++) {
+        // Any even number is not a prime.
+        if (isEven(x)) {
+            return false;
+        }
+
+        // We only need to check divider from 3 to sqrt(x).
+        for (int divider = 3; divider < Math.sqrt(x); divider += 2) {
             if (x % divider == 0) {
                 return false;
             }
@@ -40,6 +46,14 @@ public final class Maths {
         } else {
             return fibonacci(start, order - 2) + fibonacci(start, order - 1);
         }
+    }
+
+    public static boolean isEven(int x) {
+        return x % 2 == 0;
+    }
+
+    public static boolean isOdd(int x) {
+        return !isEven(x);
     }
 
     public static void main(String[] args) {
